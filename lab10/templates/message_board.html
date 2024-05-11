@@ -1,0 +1,40 @@
+<!doctype html>
+  <title>Message Board</title>
+  <h2>Messages:</h2>
+   <ul>
+     {% for au in items %}
+         {% for ms in items[au] %}
+            <li>{{ ms }} by -- {{ au }}</li>
+         {% endfor %}
+     {% endfor %}
+   </ul>
+
+    <style>
+        input[type = submit]
+        {
+            background-color: cornflowerblue;
+            color: white ;
+        }
+        input[type = submit]:focus
+        {
+            background-color: Blue;
+            color: Crimson;
+        }
+        input[type = text]:focus
+        {
+            background-color: lightblue;
+        }
+        label {
+            color: cornflowerblue;
+            padding: 1px;
+        }
+    </style>
+  <form action="/messages">
+  	<label>Message:</label>
+  	<input type="text" name="message"><br><br>
+    <label>Author:</label>
+    <input type="text" name="author"><br><br>
+  	<input type="submit" value="Post">
+   </form> 
+
+</html>

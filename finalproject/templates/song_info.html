@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<h2>
+    Title: {{title}}
+</h2>
+<h3>
+    Artist: {{artist}}
+</h3>
+
+Tags:<ul>{%for tag in tags%}<li>
+{{tag}} </li>{%endfor%}</ul>
+
+Similar Songs:<ul>{%for song in similar_song%}
+<li><a href='/database/{{song.track_id}}'>{{song.title}}</a></li>{%endfor%}</ul>
+
+<h3>Would you like to add a new tag?</h3>
+<form action = '/add_tag/{{id}}'>
+    <label>Tag</label>
+    <input type ='text' name='new_tag'><br><br>
+    <input type = 'submit' value = 'Add'>
+</form>
+<style>
+
+    form,select,option, input
+    {
+        color: crimson;
+    }
+    [type=submit]:focus
+    {
+        background-color: crimson;
+        color: lightgrey;
+    }
+    ::selection
+    {
+        color: crimson;
+        background-color: lightgrey;
+    }
+    body
+    {
+        color: lightgrey;
+        background-color: black;
+    }
+
+</style>
+
+<a href="/">Back to home page</a>
+
+
+
+<style>
+
+    ::selection
+    {
+        color: crimson;
+        background-color: lightgrey;
+    }
+    body
+    {
+        color: lightgrey;
+        background-color: black;
+    }
+
+
+
+</style>
+</html>

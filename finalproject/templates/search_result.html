@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+        <h2>Welcome to Song Finder!</h2>
+
+<p>
+    Search results of '{{term}}' by {{crit}}:
+    <ul>
+        {% for song in items %}
+            <li><div class = 'mouseover'><a href='/database/{{song.track_id}}'>{{song.title}}</a>&nbsp;by&nbsp;{{song.artist}}
+                <span class ='hoverinfo'> Track ID: {{song.track_id}}
+                </span></div></li>
+        {% endfor %}
+    </ul>
+</p>
+<!div and span info:https://www.geeksforgeeks.org/difference-between-div-and-span-tag-in-html/>
+<form>
+<input type ='button' value ='BACK' onclick='history.back()'> <!This is learned from https://www.computerhope.com/issues/ch000317.html>
+
+</form>
+<style>
+    .mouseover{
+        position: relative; <!Learned from https://www.w3schools.com/css/css_tooltip.asp and https://devdocs.io/css/>
+        display: inline-block;
+    }
+    .mouseover .hoverinfo{
+        visibility: hidden;
+        display:none;
+        width: auto;
+        background-color: lightslategray;
+        color: crimson;
+        text-align: center;
+        position: relative;
+
+
+    }
+    .mouseover:hover .hoverinfo{
+        display:inline-block;
+        visibility: visible;
+    }
+
+    h2,p, ul, li
+    {
+        color: lightgrey;
+    }
+    p
+    {
+        font-size:20px;
+    }
+    form, input
+    {
+        color: crimson;
+    }
+    ::selection
+    {
+        color: crimson;
+        background-color: lightgrey;
+    }
+    [type=button]:focus
+    {
+        background-color: crimson;
+        color: lightgrey;
+        padding: 2px;
+    }
+    body
+    {
+        background-color: black;
+    }
+    </style>
+</html>

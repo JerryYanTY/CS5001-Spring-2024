@@ -1,0 +1,55 @@
+<!doctype html>
+    <title>Welcome to Song Finder!</title>
+        <h2>Welcome to Song Finder!</h2>
+    <p>
+    Popular Tags:
+        {% for tag in items %}
+            {{tag[0]}}&nbsp;|
+        {% endfor %}
+
+    </p>
+    <form action = '/search'>
+        <input type = 'text' name = 'search_term'>
+        <select name = 'search_criterion'>
+            <option value = 'tag'>Tag</option>
+            <option value = 'artist'>Artist</option>
+        </select>
+        <input type = 'submit' value = 'Search'>
+
+    </form>
+<br><br>
+<h3>Would you like to contribute to the database?</h3>
+<form action = '/new_song'>
+    <label>Title</label>
+    <input type ='text' name='new_song_title'><br><br>
+    <label>Artist</label>
+    <input type='text' name='new_song_artist'><br><br>
+    <label>Tags</label>
+    <input type='text' name='new_song_tag'>
+    <input type = 'submit' value = 'Add'>
+</form>
+
+<style>
+
+    form,select,option, input
+    {
+        color: crimson;
+    }
+    [type=submit]:focus
+    {
+        background-color: crimson;
+        color: lightgrey;
+    }
+    ::selection
+    {
+        color: crimson;
+        background-color: lightgrey;
+    }
+    body
+    {
+        color: lightgrey;
+        background-color: black;
+    }
+
+</style>
+</html>
